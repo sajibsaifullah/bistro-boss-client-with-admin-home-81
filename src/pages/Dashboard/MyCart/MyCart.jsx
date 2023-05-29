@@ -37,7 +37,7 @@ const MyCart = () => {
       })
   };
   return (
-    <div className="w-full h-screen">
+    <div className="w-full overflow-y-auto">
       <Helmet>
         <title>Bistro Boss | My Cart</title>
       </Helmet>
