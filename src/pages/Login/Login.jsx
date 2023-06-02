@@ -48,7 +48,7 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
 
-  const handleValidateCapta = (e) => {
+  const handleValidateCaptcha = (e) => {
     const user_captcha_value = e.target.value;
     if (validateCaptcha(user_captcha_value)) {
       setDisabled(false);
@@ -107,16 +107,17 @@ const Login = () => {
                   <LoadCanvasTemplate />
                 </label>
                 <input
-                  onBlur={handleValidateCapta}
+                  onBlur={handleValidateCaptcha}
                   type="text"
                   name="captcha"
                   placeholder="Type the above captcha"
                   className="input input-bordered"
                 />
               </div>
+              {/* TODO: make button disabled for captcha */}
               <div className="form-control mt-6">
                 <input
-                  disabled={disabled}
+                  disabled={false}
                   className="btn btn-primary"
                   type="submit"
                   value="Login"
