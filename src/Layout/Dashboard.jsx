@@ -1,5 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaWallet,
+  FaCalendarAlt,
+  FaHome,
+  FaUtensils,
+  FaBook,
+  FaUsers,
+} from "react-icons/fa";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 
@@ -14,7 +22,10 @@ const Dashboard = () => {
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
+        <label
+          htmlFor="my-drawer-2"
+          className="btn btn-primary drawer-button lg:hidden"
+        >
           Open drawer
         </label>
         <Outlet />
@@ -25,7 +36,7 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/adminhome">
                   <FaHome /> Admin Home
                 </NavLink>
               </li>
@@ -40,8 +51,8 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
-                  <FaBook /> Manage Bookings
+                <NavLink to="/">
+                  <FaBook /> Manage Bookings(not implemented)
                 </NavLink>
               </li>
               <li>
@@ -53,7 +64,7 @@ const Dashboard = () => {
           ) : (
             <>
               <li>
-                <NavLink to="/dashboard/home">
+                <NavLink to="/dashboard/userhome">
                   <FaHome /> User Home
                 </NavLink>
               </li>
@@ -63,15 +74,17 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
-                  <FaWallet /> Payment History
+                <NavLink to="/">
+                  <FaWallet /> Payment History(not implemented)
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/mycart">
                   <FaShoppingCart />
                   My Cart
-                  <span className="badge badge-secondary">+{cart?.length || 0}</span>
+                  <span className="badge badge-secondary">
+                    +{cart?.length || 0}
+                  </span>
                 </NavLink>
               </li>
             </>
